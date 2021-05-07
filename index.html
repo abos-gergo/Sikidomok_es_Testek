@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js"></script>
+    <title>Térfogat és Területszámítás</title>
+</head>
+<body>
+    <div class="container-fluid row mx-auto">
+            <div class="card col-xl-3 col-lg-6">
+                <div class="card-header text-center">
+                    <h1 class="card-text">Négyzet</h1>
+                    <img src="Négyzet_ábra.png" alt="">
+                </div>
+                <div class="card-body bg-light text-center">
+                    <h2>Kerület</h2>
+                    <p>4 × a</p>
+                    <form>
+                        <label for="negyzetkera">a</label>
+                        <input class="form-control text-center" type="number" id="negyzetkera" min="0" onchange="NegyzetKerulet()"> <br>
+                        <select class="form-control text-center" id="negyzetkerme" onchange="NegyzetKerulet()">
+                            <option value="mm">Milliméter (mm)</option>
+                            <option value="cm" selected="select">Centiméter (cm)</option>
+                            <option value="dm">Deciméter (dm)</option>
+                            <option value="m">Méter (m)</option>
+                        </select> <br>
+                        <label for="negyzetkereredmeny">Eredmény</label>
+                        <input class="form-control text-center" type="text" id="negyzetkereredmeny" disabled>
+                    </form>
+                </div>
+                <div class="card-body bg-light text-center">
+                    <h2>Terület</h2>
+                    <p>a × a</p>
+                    <form>
+                        <label for="negyzettera">a</label>
+                        <input class="form-control text-center" type="number" id="negyzettera" min="0" onchange="NegyzetTerulet()"> <br>
+                        <select class="form-control text-center" id="negyzetterme" onchange="NegyzetTerulet()">
+                            <option value="mm2">Négyzetmilliméter (mm2)</option>
+                            <option value="cm2" selected="select">Négyzetcentiméter (cm2)</option>
+                            <option value="dm2">Négyzetdeciméter (dm2)</option>
+                            <option value="m2">égyzetméter (m2)</option>
+                        </select> <br>
+                        <label for="negyzettereredmeny">Eredmény</label>
+                        <input class="form-control text-center" type="text" id="negyzettereredmeny" disabled>
+                    </form>
+                </div>
+            </div>
+            <div class="card col-xl-3 col-lg-6">
+                <div class="card-header text-center">
+                    <h1 class="card-text">Kör</h1>
+                    <img src="Kör_ábra.png" alt="">
+                </div>
+                <div class="card-body bg-light text-center">
+                    <h2>Kerület</h2>
+                    <p>2 × r × π</p>
+                    <form>
+                        <label for="korkerr">r</label>
+                        <input class="form-control text-center" type="number" id="korkerr" min="0" onchange="KorKerulet()"> <br>
+                        <select class="form-control text-center" id="korkerme" onchange="KorKerulet()">
+                            <option value="mm">Milliméter (mm)</option>
+                            <option value="cm" selected="select">Centiméter (cm)</option>
+                            <option value="dm">Deciméter (dm)</option>
+                            <option value="m">Méter (m)</option>
+                        </select> <br>
+                        <label for="korkereredmeny">Eredmény</label>
+                        <input class="form-control text-center" type="text" id="korkereredmeny" disabled>
+                    </form>
+                </div>
+                <div class="card-body bg-light text-center">
+                    <h2>Terület</h2>
+                    <p>r<sup>2</sup> × π</p>
+                    <form>
+                        <label for="korterr">r</label>
+                        <input class="form-control text-center" type="number" id="korterr" min="0" onchange="KorTerulet()"> <br>
+                        <select class="form-control text-center" id="korterme" onchange="KorTerulet()">
+                            <option value="mm2">Milliméter (mm)</option>
+                            <option value="cm2" selected="select">Centiméter (cm)</option>
+                            <option value="dm2">Deciméter (dm)</option>
+                            <option value="m2">Méter (m)</option>
+                        </select> <br>
+                        <label for="kortereredmeny">Eredmény</label>
+                        <input class="form-control text-center" type="text" id="kortereredmeny" disabled>
+                    </form>
+                </div>
+             </div>
+            <div class="card col-xl-3 col-lg-6">
+                <div class="card-header text-center">
+                    <h1 class="card-text">Kocka</h1>
+                    <img src="Kocka_ábra.png" alt="">
+                </div>
+                <div class="card-body bg-light text-center">
+                    <h2>Felszín</h2>
+                    <p>6 × a × a</p>
+                    <form>
+                        <label for="kockafelszina">a</label>
+                        <input class="form-control text-center" type="number" id="kockafelszina" min="0" onchange="KockaFelszin()"> <br>
+                        <select class="form-control text-center" id="kockafelszinme" onchange="KockaFelszin()">
+                            <option value="mm2">Milliméter (mm2)</option>
+                            <option value="cm2" selected="select">Centiméter (cm2)</option>
+                            <option value="dm2">Deciméter (dm2)</option>
+                            <option value="m2">Méter (m2)</option>
+                        </select> <br>
+                        <label for="kockafelszineredmeny">Eredmény</label>
+                        <input class="form-control text-center" type="text" id="kockafelszineredmeny" disabled>
+                    </form>
+                </div>
+                <div class="card-body bg-light text-center">
+                    <h2>Térfogat</h2>
+                    <p>a × a × a</p>
+                    <form>
+                        <label for="kockaterfa">a</label>
+                        <input class="form-control text-center" type="number" id="kockaterfa" min="0" onchange="KockaTerfogat()"> <br>
+                        <select class="form-control text-center" id="kockaterfme" onchange="KockaTerfogat()">
+                            <option value="mm3">Milliméter (mm3)</option>
+                            <option value="cm3" selected="select">Centiméter (cm3)</option>
+                            <option value="dm3">Deciméter (dm3)</option>
+                            <option value="m3">Méter (m3)</option>
+                        </select> <br>
+                        <label for="kockaterferedmeny">Eredmény</label>
+                        <input class="form-control text-center" type="text" id="kockaterferedmeny" disabled>
+                    </form>
+                </div>
+            </div>
+            <div class="card col-xl-3 col-lg-6">
+                <div class="card-header text-center">
+                    <h1 class="card-text">Gömb</h1>
+                    <img src="Gömb_árbra.png" alt="">
+                </div>
+                <div class="card-body bg-light text-center">
+                    <h2>Felszín</h2>
+                    <p>4 × r<sup>2</sup> × π</p>
+                    <form>
+                        <label for="gombfelszinr">r</label>
+                        <input class="form-control text-center" type="number" id="gombfelszinr" min="0" onchange="GombFelszin()"> <br>
+                        <select class="form-control text-center" id="gombfelszinme" onchange="GombFelszin()">
+                            <option value="mm2">Milliméter (mm2)</option>
+                            <option value="cm2" selected="select">Centiméter (cm2)</option>
+                            <option value="dm2">Deciméter (dm2)</option>
+                            <option value="m2">Méter (m2)</option>
+                        </select> <br>
+                        <label for="gombfelszineredmeny">Eredmény</label>
+                        <input class="form-control text-center" type="text" id="gombfelszineredmeny" disabled>
+                    </form>
+                </div>
+                <div class="card-body bg-light text-center">
+                    <h2>Térfogat</h2>
+                    <p>(4 × r<sup>3</sup> × π) / 3</p>
+                    <form>
+                        <label for="gombterfr">r</label>
+                        <input class="form-control text-center" type="number" id="gombterfr" min="0" onchange="GombTerfogat()"> <br>
+                        <select class="form-control text-center" id="gombterfme" onchange="GombTerfogat()">
+                            <option value="mm3">Milliméter (mm3)</option>
+                            <option value="cm3" selected="select">Centiméter (cm3)</option>
+                            <option value="dm3">Deciméter (dm3)</option>
+                            <option value="m3">Méter (m3)</option>
+                        </select> <br>
+                        <label for="gombterferedmeny">Eredmény</label>
+                        <input class="form-control text-center" type="text" id="gombterferedmeny" disabled>
+                    </form>
+                </div>
+            </div>
+    </div>
+</body>
+</html>

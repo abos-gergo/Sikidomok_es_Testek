@@ -1,0 +1,23 @@
+body{
+    background-color: darkgray;
+}
+a{
+    color: white;
+}
+img{
+    height: 230px;
+}
+.card-columns{
+    width: 100%;
+}
+.card{
+    background-color: grey;
+    border-width: 0px;
+    border-radius: 0px;
+}
+.card-header{
+    background-color: grey;
+}
+input{
+    border-radius: 0px;
+}
